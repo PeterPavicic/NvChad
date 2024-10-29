@@ -19,6 +19,13 @@ local default_plugins = {
   },
 
   {
+    "Vigemus/iron.nvim",
+    init = function()
+      require("plugins.configs.iron")
+    end,
+  },
+
+  {
     "zbirenbaum/nvterm",
     init = function()
       require("core.utils").load_mappings "nvterm"
@@ -226,6 +233,19 @@ local default_plugins = {
         telescope.load_extension(ext)
       end
     end,
+  },
+
+
+  {
+    "folke/todo-comments.nvim",
+    event = 'VimEnter',
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+      -- (These are comments from the github repo)
+    }
   },
 
   -- Only load whichkey after all the gui
